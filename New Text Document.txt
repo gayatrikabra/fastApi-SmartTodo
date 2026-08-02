@@ -1,0 +1,268 @@
+1. Smart Todo List
+
+A better version of a normal todo app.
+
+Features
+Add/Edit/Delete tasks
+Mark complete
+Priority levels
+Due dates
+Search/filter tasks
+Modules
+
+Backend Modules
+Authentication
+Task CRUD APIs
+Task filtering
+Database models
+
+Frontend Modules
+Login/Register pages
+Task dashboard
+Task form modal
+Search/filter UI
+
+Steps to Implement
+Step 1 — Setup Backend
+
+Install:
+
+pip install fastapi uvicorn sqlalchemy
+
+Create:
+
+main.py
+database connection
+Task model
+
+
+Step 2 — Create Task APIs
+
+Endpoints:
+
+GET /tasks
+POST /tasks
+PUT /tasks/{id}
+DELETE /tasks/{id}
+
+Step 3 — Setup Frontend
+npm create vite@latest
+
+Install:
+
+npm install axios react-router-dom
+Step 4 — Build UI
+
+Create:
+
+Task list
+Add task form
+Filters
+Step 5 — Connect APIs
+
+Use Axios:
+
+axios.get("http://localhost:8000/tasks")
+Skills Learned
+CRUD operations
+API integration
+State management
+2. Daily Journal App
+
+Users write daily entries.
+
+Features
+Write journal entries
+Mood tracking
+Search entries
+Calendar view
+Steps
+Backend
+Journal model
+CRUD APIs
+Mood analytics
+Frontend
+
+
+
+
+
+
+
+
+
+
+
+For a todo app with:
+
+task title
+task details
+priority levels
+due dates
+mark complete
+
+a clean structure is usually:
+
+Suggested UI Structure
+
+Use:
+
+Bootstrap Card → each task
+Bootstrap Badge → priority labels
+Bootstrap Button / Checkbox → mark complete
+Bootstrap List Group OR responsive grid
+Bootstrap Modal → edit/view task details
+Bootstrap Progress (optional)
+Recommended Layout
+Top Section
+Task Input Form
+
+Use:
+
+Form
+Input
+Textarea
+Select
+Date
+Button
+
+Fields:
+
+Task Title
+Task Details
+Priority
+Due Date
+Add Task Button
+Task Display Section
+Best Choice: Bootstrap Cards
+
+Each task displayed as a card.
+
+Example structure:
+
+------------------------------------------------
+| Task Title                    [High Priority]
+|------------------------------------------------
+| Task Details text here...
+|
+| Due: 20 May 2026
+|
+| [Complete] [Edit] [Delete]
+------------------------------------------------
+Bootstrap Elements to Use
+1. Card
+<div className="card">
+
+Why:
+
+clean separation
+modern look
+easy responsive layout
+2. Badge for Priority
+<span className="badge bg-danger">High</span>
+
+Suggested colors:
+
+Priority	Bootstrap
+High	bg-danger
+Medium	bg-warning
+Low	bg-success
+3. Checkbox OR Button for Complete
+
+Checkbox:
+
+<input type="checkbox" />
+
+OR button:
+
+<button className="btn btn-success">
+  Complete
+</button>
+
+When completed:
+
+strike-through text
+faded card
+green border
+
+Example:
+
+text-decoration: line-through;
+opacity: 0.7;
+4. Due Date
+
+Use muted small text:
+
+<p className="text-muted">
+  Due: 20 May 2026
+</p>
+5. Task Details
+
+Use:
+
+<p className="card-text">
+Recommended Frontend Data Structure
+
+Example task object:
+
+{
+  id: 1,
+  title: "Complete React Project",
+  details: "Finish authentication and dashboard",
+  priority: "High",
+  dueDate: "2026-05-20",
+  completed: false
+}
+Recommended React Component Structure
+App
+ ├── TaskForm
+ ├── TaskList
+       ├── TaskCard
+       ├── TaskCard
+       ├── TaskCard
+Best Bootstrap Layout
+
+Use responsive grid:
+
+<div className="row">
+
+Each card:
+
+<div className="col-md-6 col-lg-4">
+
+This gives:
+
+mobile friendly
+tablet friendly
+desktop grid
+Extra Features Worth Adding
+Filters
+
+Use Bootstrap buttons/dropdown:
+
+All | Completed | Pending
+Search Bar
+
+Bootstrap input:
+
+<input className="form-control" />
+Sort Options
+
+Sort by:
+
+Due date
+Priority
+Completion
+Most Professional UI Combination
+
+Recommended:
+
+✅ Navbar
+✅ Task Form Card
+✅ Responsive Task Cards
+✅ Priority Badges
+✅ Completion Toggle
+✅ Edit/Delete Buttons
+✅ Empty State Message
+
+This gives a clean portfolio-quality todo app.
