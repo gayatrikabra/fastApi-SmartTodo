@@ -38,13 +38,13 @@ return <>
           Resources
         </h5>
         <p>
-          <a href="#" className="text-light text-decoration-none">Help Center</a>
+          <a href="/help" className="text-light text-decoration-none">Help Center</a>
         </p>
         <p>
-          <a href="#" className="text-light text-decoration-none">Privacy Policy</a>
+          <a href="/privacy" className="text-light text-decoration-none">Privacy Policy</a>
         </p>
         <p>
-          <a href="#" className="text-light text-decoration-none">Terms</a>
+          <a href="/terms" className="text-light text-decoration-none">Terms</a>
         </p>
       </div>
 
@@ -72,15 +72,15 @@ return <>
       
       <div className="col-md-5 col-lg-4">
         <div className="text-center text-md-end">
-          <a href="#" className="btn btn-outline-light btn-floating m-1">
+          <a href="https://www.facebook.com" className="btn btn-outline-light btn-floating m-1">
             <i className="bi bi-facebook"></i>
           </a>
 
-          <a href="#" className="btn btn-outline-light btn-floating m-1">
+          <a href="https://www.twitter.com" className="btn btn-outline-light btn-floating m-1">
             <i className="bi bi-twitter-x"></i>
           </a>
 
-          <a href="#" className="btn btn-outline-light btn-floating m-1">
+          <a href="https://www.github.com" className="btn btn-outline-light btn-floating m-1">
             <i className="bi bi-github"></i>
           </a>
         </div>
