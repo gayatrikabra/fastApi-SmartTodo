@@ -10,7 +10,7 @@ function Show() {
   useEffect(() => {
     const token = localStorage.getItem("token");
     console.log("TOKEN:", localStorage.getItem("token"));
-    fetch("http://127.0.0.1:8000/tasks/show", {
+    fetch(`https://YOUR-BACKEND.up.railway.app/tasks/show`, {
       headers: {
         // Authorization: `Bearer ${localStorage.getItem("token")}`,
          Authorization: `Bearer ${token}`,

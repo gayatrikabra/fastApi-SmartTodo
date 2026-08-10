@@ -10,8 +10,7 @@ function Delete() {
 
         const token = localStorage.getItem("token")
 
-        const response = await fetch(
-            `http://127.0.0.1:8000/tasks/delete/${taskId}`,
+        const response = await  fetch(`https://YOUR-BACKEND.up.railway.app/tasks/delete/${taskId}`, 
             {
                 method: "DELETE",
 
