@@ -22,13 +22,13 @@ return <>
           Company
         </h5>
         <p>
-          <a href="#" className="text-light text-decoration-none">About</a>
+          <a href="/about" className="text-light text-decoration-none">About</a>
         </p>
         <p>
-          <a href="#" className="text-light text-decoration-none">Careers</a>
+          <a href="/careers" className="text-light text-decoration-none">Careers</a>
         </p>
         <p>
-          <a href="#" className="text-light text-decoration-none">Blog</a>
+          <a href="/blog" className="text-light text-decoration-none">Blog</a>
         </p>
       </div>
 
