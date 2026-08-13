@@ -65,3 +65,26 @@ def root():
 # Routers
 app.include_router(auth_routes)
 app.include_router(task_routes)
+
+
+
+from sqlalchemy import text
+from fastapi import FastAPI
+
+app = FastAPI()
+
+@app.get("/db-test")
+def db_test():
+    try:
+        with engine.connect() as connection:
+            result = connection.execute(text("SELECT 1"))
+            return {
+                "status": "success",
+                "database": "PostgreSQL is connected",
+                "result": result.scalar()
+            }
+    except Exception as e:
+        return {
+            "status": "error",
+            "message": str(e)
+        }
