@@ -1,10 +1,12 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, Depends
 from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy import text
+from sqlalchemy.orm import Session
 
-from utils.db import Base, engine
+from utils.db import Base, engine, get_db
 from Authentication_User.router import auth_routes
 from Task_User.router import task_routes
+from Authentication_User.models import UserModel
 
 
 # Create database tables
@@ -51,19 +53,25 @@ def root():
 #             "message": str(e)
 #         }
 
+
+
+
+
+
+
 @app.get("/users-test")
 def users_test(db: Session = Depends(get_db)):
-    users = db.query(User).all()
+    users = db.query(UserModel).all()
 
     return [
         {
             "id": user.id,
             "name": user.name,
-            "email": user.email,
+            "username": user.username,
+            "email": user.email
         }
         for user in users
     ]
-
 # Routers
 app.include_router(auth_routes)
 app.include_router(task_routes)
