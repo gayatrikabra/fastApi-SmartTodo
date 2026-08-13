@@ -43,21 +43,7 @@ function Home() {
 
                 </div>
 
-                <div className="mt-5">
-                    <Link
-                        to="/register"
-                        className="btn btn-primary btn-lg px-5"
-                    >
-                        Get Started
-                    </Link>
-
-                    <Link
-                        to="/login"
-                        className="btn btn-outline-light btn-lg px-5 ms-3"
-                    >
-                        Login
-                    </Link>
-                </div>
+                                
 
             </div>
 
