@@ -56,7 +56,15 @@ def root():
 
 
 
+from sqlalchemy import inspect
 
+@app.get("/tables-test")
+def tables_test():
+    inspector = inspect(engine)
+
+    return {
+        "tables": inspector.get_table_names()
+    }
 
 
 @app.get("/users-test")
