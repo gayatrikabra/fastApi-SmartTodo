@@ -42,7 +42,7 @@ function Register() {
 
     return (
         <div>
-            <form>
+            <form onSubmit={clickToRegister}>
                 <div className="mb-3">
                     <label htmlFor="exampleInputname1" className="form-label">Name</label>
                     <input type="text" className="form-control" id="exampleInputName" onChange={(e) => setName(e.target.value)} />
@@ -60,7 +60,8 @@ function Register() {
                     <input type="password" className="form-control" id="exampleInputPassword1" onChange={(e) => setPassword(e.target.value)} />
                 </div>
 
-                <button type="submit" className="btn btn-dark" onClick={clickToRegister}>Click To Register</button>
+                {/* <button type="submit" className="btn btn-dark" onClick={clickToRegister}>Click To Register</button> */}
+                <button type="submit" className="btn btn-dark"></button>
             </form>
         </div>
     )

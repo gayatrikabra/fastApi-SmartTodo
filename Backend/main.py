@@ -20,7 +20,7 @@ app.add_middleware(
     CORSMiddleware,
     allow_origins=[
         "http://localhost:3000",
-        "https://precious-illumination-production-fce6.up.railway.app",
+        "https://precious-illumination-production-fc24.up.railway.app",
     ],
     allow_credentials=True,
     allow_methods=["*"],
