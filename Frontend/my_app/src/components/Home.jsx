@@ -1,53 +1,66 @@
 function Home() {
     return (
-        <section className="min-h-[500px] flex items-center justify-center bg-slate-900 text-white px-5 py-20">
+        <section className="min-h-[600px] flex items-center justify-center bg-dark text-white px-4 py-5">
+
             <div className="w-full max-w-4xl mx-auto text-center">
 
-                {/* Badge */}
-                <span className="inline-block mb-5 rounded-full border border-blue-500 px-5 py-2 text-sm font-semibold tracking-[2px] text-blue-500">
+                <span className="inline-block mb-4 rounded-pill border border-primary px-4 py-2 text-primary fw-semibold">
                     SMART TODO
                 </span>
 
-                {/* Heading */}
-                <h1 className="mb-6 text-4xl font-bold leading-tight md:text-5xl lg:text-6xl">
+                <h1 className="display-3 fw-bold mb-4">
                     Organize Your Day.{" "}
-                    <span className="text-blue-500">
+                    <span className="text-primary">
                         Get Things Done.
                     </span>
                 </h1>
 
-                {/* Description */}
-                <p className="mx-auto max-w-3xl text-base leading-7 text-slate-300 md:text-lg md:leading-8">
+                <p className="lead text-secondary mx-auto" style={{ maxWidth: "750px" }}>
                     Smart Todo is a simple and powerful task management
                     application designed to help you organize your daily
                     activities, prioritize important tasks, manage deadlines,
                     and track your progress. Create tasks, set priorities,
                     add due dates, and mark tasks as completed—all from one
-                    easy-to-use dashboard. With Smart Todo, you can spend less
-                    time managing your tasks and more time getting things done.
+                    easy-to-use dashboard.
                 </p>
 
-                {/* Highlights */}
-                <div className="mt-8 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-sm text-slate-200 md:text-base">
+                <div className="mt-4 d-flex justify-content-center gap-4 flex-wrap">
 
-                    <div className="flex items-center gap-2">
-                        <span className="font-bold text-blue-500">✓</span>
-                        <span>Plan your tasks</span>
-                    </div>
+                    <span className="text-light">
+                        <span className="text-primary fw-bold">✓</span>{" "}
+                        Plan your tasks
+                    </span>
 
-                    <div className="flex items-center gap-2">
-                        <span className="font-bold text-blue-500">✓</span>
-                        <span>Set priorities</span>
-                    </div>
+                    <span className="text-light">
+                        <span className="text-primary fw-bold">✓</span>{" "}
+                        Set priorities
+                    </span>
 
-                    <div className="flex items-center gap-2">
-                        <span className="font-bold text-blue-500">✓</span>
-                        <span>Track progress</span>
-                    </div>
+                    <span className="text-light">
+                        <span className="text-primary fw-bold">✓</span>{" "}
+                        Track progress
+                    </span>
 
                 </div>
 
+                <div className="mt-5">
+                    <Link
+                        to="/register"
+                        className="btn btn-primary btn-lg px-5"
+                    >
+                        Get Started
+                    </Link>
+
+                    <Link
+                        to="/login"
+                        className="btn btn-outline-light btn-lg px-5 ms-3"
+                    >
+                        Login
+                    </Link>
+                </div>
+
             </div>
+
         </section>
     );
 }
