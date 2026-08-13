@@ -10,7 +10,7 @@ function Show() {
   useEffect(() => {
     const token = localStorage.getItem("token");
     console.log("TOKEN:", localStorage.getItem("token"));
-    fetch(`https://https://fastapi-smarttodo-production.up.railway.app/tasks/show`, {
+    fetch(`https://fastapi-smarttodo-production.up.railway.app/tasks/show`, {
       headers: {
         // Authorization: `Bearer ${localStorage.getItem("token")}`,
          Authorization: `Bearer ${token}`,
