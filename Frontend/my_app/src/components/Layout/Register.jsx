@@ -61,7 +61,7 @@ function Register() {
                 </div>
 
                 {/* <button type="submit" className="btn btn-dark" onClick={clickToRegister}>Click To Register</button> */}
-                <button type="submit" className="btn btn-dark"></button>
+                <button type="submit" className="btn btn-dark">Register</button>
             </form>
         </div>
     )
