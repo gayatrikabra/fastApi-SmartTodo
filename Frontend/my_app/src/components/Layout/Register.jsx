@@ -8,20 +8,22 @@ function Register() {
 
     const clickToRegister = async (e) => {
         e.preventDefault()
-        const response = await fetch("http://127.0.0.1:8000/auth/register", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-                name: name,
-                username: userName,
-                password: password,
-                email: email
+        const response = await fetch(
+            "https://fastapi-smarttodo-production.up.railway.app/auth/register",
+            {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    name: name,
+                    username: userName,
+                    password: password,
+                    email: email
 
-            }),
+                }),
 
-        });
+            });
         const data = await response.json();
 
 

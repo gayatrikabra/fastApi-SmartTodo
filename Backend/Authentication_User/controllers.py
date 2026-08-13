@@ -10,7 +10,8 @@ from utils.settings import settings
 
 
 
-def register(body : UserSchema, db : Session = Depends(get_db)):
+# def register(body : UserSchema, db : Session = Depends(get_db)):
+def register(body: UserSchema, db: Session):
     is_user = db.query(UserModel).filter(UserModel.username == body.username).first()
     if is_user:
         raise HTTPException(400, detail= "Username already exist ...")
@@ -32,6 +33,7 @@ def register(body : UserSchema, db : Session = Depends(get_db)):
     db.commit()
     db.refresh(new_user)
     return new_user
+    print("USER CREATED:", new_user.id, new_user.username)
 
 
 password_hash = PasswordHash.recommended()
