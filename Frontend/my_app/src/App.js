@@ -23,7 +23,7 @@ function App() {
         {/* Shared Layout */}
         <Route path="/" element={<Layout />}>
 
-         <Route path="/home" element={<Home />} />
+         <Route index element={<Home />} />
 
           <Route path="/login" element={<Login />} />
           <Route path="/dashboard" element={<Dashboard />} />

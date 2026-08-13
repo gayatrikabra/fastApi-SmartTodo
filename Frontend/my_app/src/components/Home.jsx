@@ -4,13 +4,13 @@ function Home() {
 
             <div className="w-full max-w-4xl mx-auto text-center">
 
-                <span className="inline-block mb-4 rounded-pill border border-primary px-4 py-2 text-primary fw-semibold">
+                <span className="inline-block mb-4 rounded-pill border border-warning px-4 py-2 text-warning fw-semibold">
                     SMART TODO
                 </span>
 
                 <h1 className="display-3 fw-bold mb-4">
                     Organize Your Day.{" "}
-                    <span className="text-primary">
+                    <span className="text-warning">
                         Get Things Done.
                     </span>
                 </h1>
@@ -27,17 +27,17 @@ function Home() {
                 <div className="mt-4 d-flex justify-content-center gap-4 flex-wrap">
 
                     <span className="text-light">
-                        <span className="text-primary fw-bold">✓</span>{" "}
+                        <span className="text-warning fw-bold">✓</span>{" "}
                         Plan your tasks
                     </span>
 
                     <span className="text-light">
-                        <span className="text-primary fw-bold">✓</span>{" "}
+                        <span className="text-warning fw-bold">✓</span>{" "}
                         Set priorities
                     </span>
 
                     <span className="text-light">
-                        <span className="text-primary fw-bold">✓</span>{" "}
+                        <span className="text-warning fw-bold">✓</span>{" "}
                         Track progress
                     </span>
 
