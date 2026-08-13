@@ -12,6 +12,7 @@ import Show from "./components/Dashboard/Show";
 import Add from './components/Dashboard/Add';
 import Edit from './components/Dashboard/Edit';
 import Delete from './components/Dashboard/Delete'
+import Home from "./components/Home";
 
 
 function App() {
@@ -22,7 +23,7 @@ function App() {
         {/* Shared Layout */}
         <Route path="/" element={<Layout />}>
 
-         
+         <Route index element={<Home />} />
 
           <Route path="/login" element={<Login />} />
           <Route path="/dashboard" element={<Dashboard />} />
