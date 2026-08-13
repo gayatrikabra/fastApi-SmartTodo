@@ -56,30 +56,30 @@ def root():
 
 
 
-from sqlalchemy import inspect
+# from sqlalchemy import inspect
 
-@app.get("/tables-test")
-def tables_test():
-    inspector = inspect(engine)
+# @app.get("/tables-test")
+# def tables_test():
+#     inspector = inspect(engine)
 
-    return {
-        "tables": inspector.get_table_names()
-    }
+#     return {
+#         "tables": inspector.get_table_names()
+#     }
 
 
-@app.get("/users-test")
-def users_test(db: Session = Depends(get_db)):
-    users = db.query(UserModel).all()
+# @app.get("/users-test")
+# def users_test(db: Session = Depends(get_db)):
+#     users = db.query(UserModel).all()
 
-    return [
-        {
-            "id": user.id,
-            "name": user.name,
-            "username": user.username,
-            "email": user.email
-        }
-        for user in users
-    ]
+#     return [
+#         {
+#             "id": user.id,
+#             "name": user.name,
+#             "username": user.username,
+#             "email": user.email
+#         }
+#         for user in users
+#     ]
 # Routers
 app.include_router(auth_routes)
 app.include_router(task_routes)

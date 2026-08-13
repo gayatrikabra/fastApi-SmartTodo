@@ -6,7 +6,8 @@ function Add() {
     const [title, setTitle] = useState("")
     const [description, setDescription] = useState("")
     const [dueDate, setDueDate] = useState("")
-    const [status, setStatus] = useState(false)
+    // const [status, setStatus] = useState(false)
+    const [status, setStatus] = useState("Not Completed");
     const [priority, setPriority] = useState("Select Priority");
     const navigate = useNavigate();
 
@@ -16,39 +17,42 @@ function Add() {
 
 
         // const response = await fetch("http://127.0.0.1:8000/tasks/add", {
-        const response = await fetch("https://fastapi-smarttodo-production.up.railway.app/tasks/add", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-                "Authorization": `Bearer ${token}`
-            },
-            body: JSON.stringify({
-                title,
-                description,
-                priority,
-                dueDate,
-                status
-
-            }),
-
-        });
+      
+    const response = await fetch(
+    "https://fastapi-smarttodo-production.up.railway.app/tasks/add",
+    {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${token}`,
+        },
+        body: JSON.stringify({
+            title: title,
+            description: description,
+            priority: priority,
+            due_date: dueDate,
+            status: status,
+        }),
+    }
+);
         const data = await response.json();
         console.log(data);
-       
-  if (response.ok) {
 
-      //localStorage.setItem("token", data.access_token)
-  
-         navigate("/dashboard",  {
-        state: {
-            data: data,
-        } });
-   
-} else {
+        if (response.ok) {
 
-    alert(data.detail)
+            //localStorage.setItem("token", data.access_token)
 
-}
+            navigate("/dashboard", {
+                state: {
+                    data: data,
+                }
+            });
+
+        } else {
+
+            alert(data.detail)
+
+        }
     }
     return (
         <div>
@@ -87,7 +91,7 @@ function Add() {
                                         : "Not Completed"
                                 )
                             }
-                         />
+                        />
                         <label className="form-check-label" htmlFor="switchCheckDefault">Is Completed</label>
                         <h5 className="mt-3">
                             Status : {status}
