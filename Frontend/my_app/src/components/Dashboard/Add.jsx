@@ -15,7 +15,8 @@ function Add() {
         const token = localStorage.getItem("token")
 
 
-        const response = await fetch("http://127.0.0.1:8000/tasks/add", {
+        // const response = await fetch("http://127.0.0.1:8000/tasks/add", {
+        const response = await fetch("https://fastapi-smarttodo-production.up.railway.app/tasks/add", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

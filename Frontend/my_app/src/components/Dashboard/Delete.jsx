@@ -10,7 +10,7 @@ function Delete() {
 
         const token = localStorage.getItem("token")
 
-        const response = await  fetch(`https://YOUR-BACKEND.up.railway.app/tasks/delete/${taskId}`, 
+        const response = await  fetch(`https://https://fastapi-smarttodo-production.up.railway.app/tasks/delete/${taskId}`, 
             {
                 method: "DELETE",
 
