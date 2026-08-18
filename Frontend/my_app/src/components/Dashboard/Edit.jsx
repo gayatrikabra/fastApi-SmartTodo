@@ -1,19 +1,20 @@
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 function Edit() {
     const [taskId, setTaskId] = useState("")
     const [title, setTitle] = useState("")
     const [description, setDescription] = useState("")
     const [dueDate, setDueDate] = useState("")
-   const [status, setStatus] = useState("Not Completed")
+    const [status, setStatus] = useState("Not Completed")
     const [priority, setPriority] = useState("Select Priority");
-
+    const navigate = useNavigate()
     const handleSubmit = async (e) => {
         e.preventDefault()
         const token = localStorage.getItem("token")
 
 
-        const response = await fetch(`https://fastapi-smarttodo-production.up.railway.app/tasks/edit/${taskId}`,  {
+        const response = await fetch(`https://fastapi-smarttodo-production.up.railway.app/tasks/edit/${taskId}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",
@@ -32,12 +33,18 @@ function Edit() {
         });
         const data = await response.json();
         console.log(data);
-alert(data.detail)
+        alert(data.detail)
+
+        navigate("/dashboard", {
+            state: {
+                data: data,
+            }
+        });
     }
     return (
         <div>
             <form onSubmit={handleSubmit}>
- <div className="mb-3">
+                <div className="mb-3">
                     <label htmlFor="exampleInputTitle1" className="form-label">Task ID</label>
                     <input type="text" className="form-control" id="exampleInputTask_id1" onChange={(e) => setTaskId(e.target.value)} />
                 </div>
@@ -76,7 +83,7 @@ alert(data.detail)
                                         : "Not Completed"
                                 )
                             }
-                         />
+                        />
                         <label className="form-check-label" htmlFor="switchCheckDefault">Is Completed</label>
                         <h5 className="mt-3">
                             Status : {status}

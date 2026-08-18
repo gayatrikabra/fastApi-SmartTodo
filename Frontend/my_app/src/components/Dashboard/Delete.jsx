@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-
+import { useNavigate } from 'react-router-dom';
 function Delete() {
-
+    const navigate = useNavigate();
     const [taskId, setTaskId] = useState("")
 
     const handleDelete = async (e) => {
@@ -10,7 +10,7 @@ function Delete() {
 
         const token = localStorage.getItem("token")
 
-        const response = await  fetch(`https://fastapi-smarttodo-production.up.railway.app/tasks/delete/${taskId}`, 
+        const response = await fetch(`https://fastapi-smarttodo-production.up.railway.app/tasks/delete/${taskId}`,
             {
                 method: "DELETE",
 
@@ -26,6 +26,8 @@ function Delete() {
 
             data = await response.json()
 
+
+
         } catch {
 
             console.log("No JSON response")
@@ -38,6 +40,18 @@ function Delete() {
             alert("Task Deleted Successfully")
 
             setTaskId("")
+
+
+
+            //localStorage.setItem("token", data.access_token)
+
+            navigate("/dashboard", {
+                state: {
+                    data: data,
+                }
+            });
+
+
 
         } else {
 

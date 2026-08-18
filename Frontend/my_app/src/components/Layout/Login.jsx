@@ -4,12 +4,12 @@ import { useNavigate } from 'react-router-dom';
 function Login() {
     const [userName, setUserName] = useState("")
     const [password, setPassword] = useState("")
- const navigate = useNavigate();
+    const navigate = useNavigate();
 
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-        
+
         const response = await fetch("https://fastapi-smarttodo-production.up.railway.app/auth/login", {
             method: "POST",
             headers: {
@@ -24,27 +24,28 @@ function Login() {
         });
         const data = await response.json();
         console.log(data);
-     
+
         if (response.ok) {
 
-      localStorage.setItem("token", data.access_token)
-        console.log(
-    "SAVED TOKEN:",
-    localStorage.getItem("token"));
- localStorage.setItem("username", userName);
-  
-         navigate("/dashboard",  {
-        state: {
-            data: data,
-            username: userName
-        } });
-   
-} else {
+            localStorage.setItem("token", data.access_token)
+            console.log(
+                "SAVED TOKEN:",
+                localStorage.getItem("token"));
+            localStorage.setItem("username", userName);
 
-    alert(data.detail)
+            navigate("/dashboard", {
+                state: {
+                    data: data,
+                    username: userName
+                }
+            });
 
-}
-     
+        } else {
+
+            alert(data.detail)
+
+        }
+
     };
     return (
         <div>

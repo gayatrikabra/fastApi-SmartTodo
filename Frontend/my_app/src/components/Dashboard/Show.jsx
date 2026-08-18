@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 // import { useNavigate } from "react-router-dom";
 
 function Show() {
@@ -13,7 +14,7 @@ function Show() {
     fetch(`https://fastapi-smarttodo-production.up.railway.app/tasks/show`, {
       headers: {
         // Authorization: `Bearer ${localStorage.getItem("token")}`,
-         Authorization: `Bearer ${token}`,
+        Authorization: `Bearer ${token}`,
       },
     })
       .then((res) => {
@@ -39,48 +40,68 @@ function Show() {
 
 
   return (
+    <>
+      {/* Dashboard Navigation */}
+      < nav className="navbar navbar-dark bg-dark" >
+        <div className="container">
+          <Link className="navbar-brand" to="/dashboard">
+            Smart Todo
+          </Link>
 
-    <div className="container mt-5">
-      {tasks.length === 0 ? (
-        <p>No tasks found</p>
-      ) : (
-        tasks.map((task, index) => (
+          <Link className="btn btn-light" to="/dashboard">
+            Dashboard
+          </Link>
+        </div>
+      </nav >
+      <div className="container mt-5">
+        {tasks.length === 0 ? (
+          <p>No tasks found</p>
+        ) : (
+          tasks.map((task, index) => (
 
 
-          <div className="card mb-3 shadow-sm" key={index}>
+            <div className="card mb-3 shadow-sm" key={task.id}>
 
-            <div className="card-header d-flex justify-content-between">
-              <span>Status: <strong>{task.status}</strong></span>
-              <span className="badge bg-primary">{task.priority}</span>
+              <div className="card-header d-flex justify-content-between">
+                <span>Status: <strong>{task.status}</strong></span>
+                <span className="badge bg-primary">{task.priority}</span>
+              </div>
+
+              <div className="mb-2">
+                <span className="text-muted">Task ID:</span>
+                <div>
+                  <strong>{task.id}</strong>
+                </div>
+              </div>
+
+              <div className="card-body">
+
+                <div className="mb-2">
+                  <span className="text-muted">Title:</span>
+                  <div><strong>{task.title}</strong></div>
+                </div>
+
+                <div className="mb-2">
+                  <span className="text-muted">Description:</span>
+                  <div>{task.description}</div>
+                </div>
+
+                <div className="mb-2">
+                  <span className="text-muted">Due Date:</span>
+                  <div>{task.due_date || "Not set"}</div>
+                </div>
+
+              </div>
+
+
+
             </div>
-
-            <div className="card-body">
-
-              <div className="mb-2">
-                <span className="text-muted">Title:</span>
-                <div><strong>{task.title}</strong></div>
-              </div>
-
-              <div className="mb-2">
-                <span className="text-muted">Description:</span>
-                <div>{task.description}</div>
-              </div>
-
-              <div className="mb-2">
-                <span className="text-muted">Due Date:</span>
-                <div>{task.due_date || "Not set"}</div>
-              </div>
-
-            </div>
+          ))
+        )}
 
 
-
-          </div>
-        ))
-      )}
-
-      
-    </div>
+      </div>
+    </>
   )
 }
 
