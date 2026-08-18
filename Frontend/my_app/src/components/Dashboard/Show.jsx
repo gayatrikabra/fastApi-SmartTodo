@@ -68,10 +68,11 @@ function Show() {
               </div>
 
               <div className="mb-2">
-                <span className="text-muted">Task ID:</span>
+                <span className="text-muted">Task ID:
                 <div>
                   <strong>{task.id}</strong>
                 </div>
+                </span>
               </div>
 
               <div className="card-body">
