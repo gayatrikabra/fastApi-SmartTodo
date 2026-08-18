@@ -67,16 +67,18 @@ function Show() {
                 <span className="badge bg-primary">{task.priority}</span>
               </div>
 
-              <div className="mb-2">
-                <span className="text-muted">Task ID:
-                <div>
-                  <strong>{task.id}</strong>
-                </div>
-                </span>
-              </div>
+
 
               <div className="card-body">
 
+                <div className="mb-2">
+                  <span className="text-muted">Task ID: </span>
+                  <div>
+                    <strong>{task.id}</strong>
+                  </div>
+
+                </div>
+                
                 <div className="mb-2">
                   <span className="text-muted">Title:</span>
                   <div><strong>{task.title}</strong></div>
